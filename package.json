@@ -1,6 +1,6 @@
 {
   "name": "rd-event-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A basic singleton event manager and eventbus package",
   "main": "index.js",
   "scripts": {
