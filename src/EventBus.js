@@ -1,7 +1,10 @@
-class EventBus {
+const EventBusInterface = require("./EventBusInterface");
+
+class EventBus extends EventBusInterface {
   #subscriptions = {};
 
   constructor() {
+    super();
     this.getNextUniqueId = getIdGenerator();
 
     function getIdGenerator() {
@@ -32,8 +35,8 @@ class EventBus {
       if (!this.#subscriptions[eventType])
         return;
 
-      Object.keys(this.#subscriptions[eventType]).forEach(async (key) => {
-        await this.#subscriptions[eventType][key].handle(event);
+      Object.keys(this.#subscriptions[eventType]).forEach((key) => {
+        this.#subscriptions[eventType][key].handle(event);
       });
     };
   }

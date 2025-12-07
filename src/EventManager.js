@@ -3,18 +3,20 @@ const EventBus = require("./EventBus");
 class EventManager {
   #eventBus;
 
-  constructor() {
-    this.#eventBus = new EventBus();
+  //Init with provided EventBus or default in-memory EventBus
+
+  constructor(eventBus) {
+    this.#eventBus = eventBus || new EventBus();
 
     this.subscribe = (eventType, eventHandler) => {
-      this.#eventBus.subscribe(eventType, eventHandler);
+      return this.#eventBus.subscribe(eventType, eventHandler);
     };
 
     this.emit = (event) => {
-      this.#eventBus.publish(event);
+      return this.#eventBus.publish(event);
     };
   }
 }
 
 const eventManager = new EventManager();
-module.exports = eventManager
+module.exports = eventManager;

@@ -1,7 +1,7 @@
 {
   "name": "rd-event-manager",
-  "version": "1.0.1",
-  "description": "A basic singleton event manager and eventbus package",
+  "version": "1.1.0",
+  "description": "A singleton event manager and eventbus package fire-and-forget style for Node.js applications.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
